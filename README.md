@@ -7,5 +7,6 @@ URL at https://guitar.nctucs.net/windstring
 This repo is for NCTU Wind String Cup 2015
 
 Frontend framework using Semantic-UI
+
 Backend using raw PHP
 
