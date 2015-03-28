@@ -31,9 +31,7 @@ if(isset($_POST['login']) && isset($_POST['password'])){
 <html>
 <head>
 <title>登入 | 2015交大風弦盃</title>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js?ver=2.0.3"></script>
-  <link rel="stylesheet" href="../static/semantic-ui/dist/semantic.css"/>
-  <script src="../static/semantic-ui/dist/semantic.js"></script>
+<?php require_once('../template/pre_css_js.php');?>
 </head>
 <body>
   <div class="container" id="main">
