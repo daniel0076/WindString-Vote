@@ -46,6 +46,7 @@ function make_grid($result){
 <?php
 require_once('template/pre_css_js.php');
 ?>
+<title>人氣獎投票 | 2015交大風弦盃</title>
 <script >
 $(document).ready(function(){
   $('.ui.video').video();
