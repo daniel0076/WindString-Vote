@@ -17,10 +17,10 @@ function make_grid($result){
   $grid="";
   foreach ($result as $row) {
     $grid.='<div class="column"> <div class="ui segment">';
-    $grid.="<a class='ui top left attached teal large label'>$row[type]</a>";
+    $grid.="<a class='ui top left attached orange large label'>$row[type]</a>";
     $grid.="<div class='ui video' data-source='youtube' data-id=$row[youtube_id] ></div>";
     $grid.="
-<div class='ui icon message'>
+<div class='ui blue icon message'>
     <div class='content'>
       <div class='header'>
        $row[performer] - $row[song]
@@ -29,10 +29,15 @@ function make_grid($result){
         <p>說明：$row[description]</p>
     </div>
 </div>";
-    $grid.="<div class='ui blue animated fade button'>
-  <div class='visible content'>目前票數：$row[votes]</div>
-  <div class='hidden content'>投我一票 </div>
-</div>";
+    $grid.="
+  <form class='ui form' action='vote.php' method='post'>
+    <input type='hidden' name='cid' value='$row[cid]'>
+    <div class='ui green animated fade button'>
+      <div class='visible content'>目前票數：$row[votes]</div>
+      <div class='hidden content'>投我一票 </div>
+    </div>
+  </form>
+";
     $grid.="</div></div>";
   }
   return $grid;
@@ -46,6 +51,7 @@ function make_grid($result){
 <?php
 require_once('template/pre_css_js.php');
 ?>
+<link rel="stylesheet" href="css/index.css"/>
 <title>人氣獎投票 | 2015交大風弦盃</title>
 <script >
 $(document).ready(function(){
@@ -55,21 +61,16 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-  <div id="top">
-    <div class="ui icon positive message">
-      <i class="inbox icon"></i>
-      <div class="content">
-        <div class="header">
-          2015交大風弦盃 人氣獎投票
-        </div>
-        <p>為您喜愛的隊伍投下一票</p>
-      </div>
-    </div>
+<div class='content'>
+  <div class="top">
+        <img src="static/top.png"></img>
   </div>
-<div class="ui three column grid">
-<?php
-echo make_grid($result);
-?>
+
+  <div class="ui three column grid">
+  <?php
+  echo make_grid($result);
+  ?>
+  </div>
 </div>
 </body>
 </html>

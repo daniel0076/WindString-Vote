@@ -1,0 +1,14 @@
+div.top img{
+    margin:auto;
+    max-width:100%;
+    width:auto;
+    height:auto;
+}
+div.content{
+    margin:auto;
+}
+
+.ui.grid{
+    margin-left:0;
+    margin-right:0;
+}
