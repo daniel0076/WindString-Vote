@@ -1,3 +1,5 @@
 auth/
 static/
+vendor/
 .*.swp
+composer.*

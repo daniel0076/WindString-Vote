@@ -12,5 +12,5 @@ Backend using raw PHP
 
 ### Special Thanks
 
-Graph Designer : Poko Fang
+Graphic Designer : Poko Fang
 
