@@ -1,8 +1,7 @@
 <?php
 session_start();
 require('../vendor/autoload.php');
-$app_id="347468078782223";
-$app_secret="7b5002244e7dfe10a94e0cefbaa2ea57";
+require_once('auth/fb.php');
 
 use Facebook\FacebookSession;
 use Facebook\FacebookRequest;
@@ -11,7 +10,7 @@ use Facebook\FacebookRequestException;
 use Facebook\FacebookRedirectLoginHelper;
 
 FacebookSession::setDefaultApplication($app_id,$app_secret);
-$redirect_url="http://guitar.nctucs.net/windstring/vote/fb_auth.php";
+$redirect_url="http://guitar.nctucs.net/windstring/admin/fb_auth.php";
 $helper = new FacebookRedirectLoginHelper($redirect_url);
 $session = $helper->getSessionFromRedirect();
 
