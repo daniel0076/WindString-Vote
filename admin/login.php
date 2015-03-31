@@ -9,7 +9,7 @@ global $db;
 if(isset($_POST['login']) && isset($_POST['password'])){
     $login=$_POST['login'];
     $pw=$_POST['password'];
-    $login_query="SELECT * FROM `accounts` WHERE `login` = :login AND password = :password";
+    $login_query="SELECT * FROM `accounts` WHERE `login` = :login AND `password` = :password";
     try {
         $check= $db->prepare($login_query);
         $check->execute(array(':login'=> $login,':password'=> hash('sha256',$pw)));
