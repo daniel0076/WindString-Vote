@@ -30,13 +30,10 @@ function make_grid($result){
     </div>
 </div>";
     $grid.="
-  <form class='ui form' action='vote.php' method='post'>
-    <input type='hidden' name='cid' value='$row[cid]'>
-    <div class='ui green animated fade button'>
+    <div class='ui green animated fade button' onclick=\"vote($row[cid])\">
       <div class='visible content'>目前票數：$row[votes]</div>
-      <div class='hidden content'>投我一票 </div>
+      <div class='hidden content')\">投我一票 </div>
     </div>
-  </form>
 ";
     $grid.="</div></div>";
   }
@@ -58,6 +55,9 @@ $(document).ready(function(){
   $('.ui.video').video();
 }
 );
+function vote(cid) {
+    window.location.href = "vote.php?cid="+cid;
+}
 </script>
 </head>
 <body>
