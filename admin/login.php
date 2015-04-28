@@ -17,7 +17,7 @@ if(isset($_POST['login']) && isset($_POST['password'])){
         if($result>0){
             $_SESSION['admin']=true;
             $_SESSION['name']=$result['login'];
-            header("Location: ../vote/index.php");
+            header("Location: index.php");
             die();
         }
 

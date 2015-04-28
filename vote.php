@@ -48,7 +48,6 @@ function vote($user_profile){
             $ip=get_ip();
             $_date=date('Y-m-d H:i:s');
             $query="INSERT INTO `voters` (`vid`, `name`, `gender`, `email`, `fb_id`, `cid`, `from_ip`, `date`) VALUES (NULL, :name, :gender, :email, :fb_id, :cid, :from_ip, :_date)";
-            $dbe->execute($query_array);
             try{
                 $dbe=$db->prepare($query);
                 $query_array=array(':name'=>$user_profile->getName(),':gender'=>$user_profile->getGender(),':email'=>$user_profile->getEmail(),':fb_id'=>$user_profile->getId(),':cid'=>$cid,':from_ip'=>$ip,':_date'=>$_date);

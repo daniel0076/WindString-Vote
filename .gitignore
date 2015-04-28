@@ -3,3 +3,4 @@ static/
 vendor/
 .*.swp
 composer.*
+db_backup.sh
