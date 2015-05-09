@@ -32,9 +32,9 @@ function make_grid($result){
     </div>
 </div>";
         $grid.="
-    <div class='ui green animated fade button' onclick=\"vote($row[cid])\">
+    <div class='ui green animated fade button' onclick=vote($row[cid])>
       <div class='visible content'>目前票數：$row[votes]</div>
-      <div class='hidden content')\">投我一票 </div>
+      <div class='hidden content'>投我一票 </div>
     </div>
 ";
         $grid.="</div></div>";
@@ -57,6 +57,7 @@ function make_add() {
 <!DOCTYPE html>
 <html>
 <head>
+ <meta charset="UTF-8">
 <?php
 require_once('template/pre_css_js.php');
 ?>
@@ -68,16 +69,14 @@ $(document).ready(function(){
 }
 );
 function vote(cid) {
-    if(confirm("你確定要投給他嗎?")){
-        window.location.href = "vote.php?cid="+cid;
-    }
+    alert("投票結束了");
 }
 </script>
 </head>
 <body>
 <div class='content'>
   <div class="top">
-        <img src="static/top.png"></img>
+        <img src="static/top.png" alt="Top Img">
   </div>
     <div class="ui blue icon message" style="margin:auto;text-align:center;">
       <i class="facebook square icon" ></i>
@@ -96,18 +95,18 @@ echo make_grid($result);
 ?>
   </div>
 </div>
-<div name="footer" id="footer">
+<div id="footer">
     <div class="ui divider"></div>
     <div class="sponsors">
-    <h2 class="ui header">贊助●Sponsors</h2>
+        <h2 class="ui header">贊助●Sponsors</h2>
+        <img class="ui small image vendor" src="images/vendor/1.jpg" alt="vendor pic">
+        <img class="ui small image vendor" src="images/vendor/2.jpg" alt="vendor pic">
+        <img class="ui medium image vendor" src="images/vendor/3.jpg" alt="vendor pic">
+        <img class="ui small image vendor" src="images/vendor/4.jpg" alt="vendor pic">
+        <img class="ui medium image vendor" src="images/vendor/5.jpg" alt="vendor pic">
+        <img class="ui image vendor" src="images/vendor/6.jpg" alt="vendor pic">
+        <img class="ui image vendor" src="images/vendor/7.jpg" alt="vendor pic">
     </div>
-    <img class="ui small image vendor" src="images/vendor/1.jpg">
-    <img class="ui small image vendor" src="images/vendor/2.jpg">
-    <img class="ui medium image vendor" src="images/vendor/3.jpg">
-    <img class="ui small image vendor" src="images/vendor/4.jpg">
-    <img class="ui medium image vendor" src="images/vendor/5.jpg">
-    <img class="ui image vendor" src="images/vendor/6.jpg">
-    <img class="ui image vendor" src="images/vendor/7.jpg">
 </div>
 </div>
 </body>

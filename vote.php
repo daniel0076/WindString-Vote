@@ -1,5 +1,7 @@
 <?php
 session_start();
+echo "<script>alert('投票結束了哦');location.href='/windstring/';</script>";
+die();
 
 if(isset($_GET['cid'])){
     $cid=$_GET['cid'];
